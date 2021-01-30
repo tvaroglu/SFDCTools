@@ -1,0 +1,1563 @@
+[
+    {
+        "totalSize": 14,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247YNXAA2"
+                },
+                "Id": "0064z0000247YNXAA2",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/100Mb// 321637250_FI01WTLJ93_PHOU956 1350471",
+                "CloseDate": "2020-11-30",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 377.51,
+                "Bandwidth__c": "100Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "ASR (Automated)",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 23.51,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 377.51,
+                "Term_in_Months__c": 12.0,
+                "NPV__c": 4143.27,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 0.0,
+                "Amount": 354.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000rx9W6AAI"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247PuJAAU"
+                },
+                "Id": "0064z0000247PuJAAU",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/100Mb// PWO122601 1344557",
+                "CloseDate": "2021-01-14",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 303.61,
+                "Bandwidth__c": "100Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 18.91,
+                "Installation_NRR__c": 500.0,
+                "Total_MAR__c": 13.89,
+                "Total_MRR__c": 317.5,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 9460.0,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 196.35,
+                "Amount": 284.7,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000001KVymuAAD"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247UkzAAE"
+                },
+                "Id": "0064z0000247UkzAAE",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/100Mb// 7MS02441655, 7MSV4616918 1348114",
+                "CloseDate": "2021-01-15",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 399.0,
+                "Bandwidth__c": "100Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "ASR (Automated)",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 399.0,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 11500.04,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 542.85,
+                "Amount": 399.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000KLnr4AAD"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247VvjAAE"
+                },
+                "Id": "0064z0000247VvjAAE",
+                "Name": "ELine/Point-to-Point/100Mb// N/A 1349113",
+                "CloseDate": "2021-01-18",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 325.0,
+                "Bandwidth__c": "100Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 500.0,
+                "Total_MAR__c": 41.67,
+                "Total_MRR__c": 366.67,
+                "Term_in_Months__c": 12.0,
+                "NPV__c": 3799.75,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 259.79,
+                "Amount": 325.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000zmtTwAAI"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247LW8AAM"
+                },
+                "Id": "0064z0000247LW8AAM",
+                "Name": "ELine/Point-to-Point/10G// N/A 1341830",
+                "CloseDate": "2021-01-19",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 2000.0,
+                "Bandwidth__c": "10G",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Custom Solution",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 2000.0,
+                "Term_in_Months__c": 12.0,
+                "NPV__c": 402.49,
+                "Netex_MRC_Approved__c": 212.38,
+                "Netex_NRC_Approved__c": 1747.45,
+                "Total_Success_Based_Capex_Calc__c": 17416.0,
+                "Amount": 2000.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0010z00001UlekhAAB"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247Xv1AAE"
+                },
+                "Id": "0064z0000247Xv1AAE",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/10Mb// 7MS02441077, 7MSV4614425 1350221",
+                "CloseDate": "2021-01-19",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 220.0,
+                "Bandwidth__c": "10Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "ASR (Automated)",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 220.0,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 49.34,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 6590.85,
+                "Amount": 220.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000KLnr4AAD"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247DElAAM"
+                },
+                "Id": "0064z0000247DElAAM",
+                "Name": "ELine/Point-to-Point/1G// 1G EPL 150 S Alto Mesa-15115 SW Sequoia 1336709",
+                "CloseDate": "2021-01-20",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 1659.38,
+                "Bandwidth__c": "1G",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Custom Solution",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 18.38,
+                "Installation_NRR__c": 1000.0,
+                "Total_MAR__c": 27.78,
+                "Total_MRR__c": 1687.16,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 14137.52,
+                "Netex_MRC_Approved__c": 1150.0,
+                "Netex_NRC_Approved__c": 500.0,
+                "Total_Success_Based_Capex_Calc__c": 545.0,
+                "Amount": 1641.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000inGTBAA2"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247Z3EAAU"
+                },
+                "Id": "0064z0000247Z3EAAU",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/1G// 81734 1350803",
+                "CloseDate": "2021-01-20",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 886.52,
+                "Bandwidth__c": "1G",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 36.52,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 886.52,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 16212.23,
+                "Netex_MRC_Approved__c": 300.0,
+                "Netex_NRC_Approved__c": 1000.0,
+                "Total_Success_Based_Capex_Calc__c": 196.35,
+                "Amount": 850.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000inGjHAAU"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z00002470spAAA"
+                },
+                "Id": "0064z00002470spAAA",
+                "Name": "ELine/Point-to-Point/20Mb// N/A 1328693",
+                "CloseDate": "2021-01-21",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 663.89,
+                "Bandwidth__c": "20Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 28.89,
+                "Installation_NRR__c": 1500.0,
+                "Total_MAR__c": 41.67,
+                "Total_MRR__c": 705.56,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 5330.61,
+                "Netex_MRC_Approved__c": 200.0,
+                "Netex_NRC_Approved__c": 500.0,
+                "Total_Success_Based_Capex_Calc__c": 9450.0,
+                "Amount": 635.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000MDYQCAA5"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247Xu8AAE"
+                },
+                "Id": "0064z0000247Xu8AAE",
+                "Name": "ELine/Point-to-Point/1G// N/A 1350213",
+                "CloseDate": "2021-01-21",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 950.0,
+                "Bandwidth__c": "1G",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 3000.0,
+                "Total_MAR__c": 83.33,
+                "Total_MRR__c": 1033.33,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 25608.36,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 6020.7,
+                "Amount": 950.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000001BA1SRAA1"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247XBBAA2"
+                },
+                "Id": "0064z0000247XBBAA2",
+                "Name": "ELine/Pt to Multi-Pt (UNI)/50Mb// 1816346 1349743",
+                "CloseDate": "2021-01-21",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 265.35,
+                "Bandwidth__c": "50Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 265.35,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 7812.63,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 196.35,
+                "Amount": 265.35,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000KLnluAAD"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000247OdHAAU"
+                },
+                "Id": "0064z0000247OdHAAU",
+                "Name": "ELine/Point-to-Point/1G// N/A 1343776",
+                "CloseDate": "2021-01-21",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 1109.05,
+                "Bandwidth__c": "1G",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Tranzact Custom Solution",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 69.05,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 1109.05,
+                "Term_in_Months__c": 36.0,
+                "NPV__c": 8180.78,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 19754.7,
+                "Amount": 1040.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0014z00001b1bXaAAI"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0064z0000246mM6AAI"
+                },
+                "Id": "0064z0000246mM6AAI",
+                "Name": "ELine/Point-to-Point/100Mb// N/A 1317968",
+                "CloseDate": "2021-01-21",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 1075.0,
+                "Bandwidth__c": "100Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 0.0,
+                "Total_MAR__c": 0.0,
+                "Total_MRR__c": 1075.0,
+                "Term_in_Months__c": 12.0,
+                "NPV__c": 6238.41,
+                "Netex_MRC_Approved__c": 250.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 2722.53,
+                "Amount": 1075.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0016000000QSd6ZAAT"
+                    },
+                    "Name": "The Corporation"
+                }
+            },
+            {
+                "attributes": {
+                    "type": "Opportunity",
+                    "url": "/services/data/v38.0/sobjects/Opportunity/0060z0000246O6wAAE"
+                },
+                "Id": "0060z0000246O6wAAE",
+                "Name": "ELine/Point-to-Point/30Mb// N/A 1303460",
+                "CloseDate": "2021-01-31",
+                "Opportunity_Type__c": "New Service",
+                "Total_MRR_Calc__c": 450.0,
+                "Bandwidth__c": "30Mb",
+                "Reporting_Business_Group__c": "Ethernet",
+                "Opportunity_Workflow_Type__c": "Standard Pricing",
+                "StageName": "4 - Closed",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "Installation_NRR__c": 1000.0,
+                "Total_MAR__c": 83.33,
+                "Total_MRR__c": 533.33,
+                "Term_in_Months__c": 12.0,
+                "NPV__c": 3810.02,
+                "Netex_MRC_Approved__c": 0.0,
+                "Netex_NRC_Approved__c": 0.0,
+                "Total_Success_Based_Capex_Calc__c": 2114.01,
+                "Amount": 450.0,
+                "Account": {
+                    "attributes": {
+                        "type": "Account",
+                        "url": "/services/data/v38.0/sobjects/Account/0010z00001b15gXAAQ"
+                    },
+                    "Name": "The Corporation"
+                }
+            }
+        ]
+    },
+    {
+        "totalSize": 15,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0OnTEAV"
+                },
+                "Id": "00T4z00007P0OnTEAV",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000246mM6AAI",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0Q9zEAF"
+                },
+                "Id": "00T4z00007P0Q9zEAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z00002470spAAA",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0PclEAF"
+                },
+                "Id": "00T4z00007P0PclEAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247DElAAM",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0RLNEA3"
+                },
+                "Id": "00T4z00007P0RLNEA3",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247DElAAM",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0Q5VEAV"
+                },
+                "Id": "00T4z00007P0Q5VEAV",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247LW8AAM",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0SmtEAF"
+                },
+                "Id": "00T4z00007P0SmtEAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247OdHAAU",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0Sk9EAF"
+                },
+                "Id": "00T4z00007P0Sk9EAF",
+                "Subject": "Validate Agent Commission",
+                "WhatId": "0064z0000247OdHAAU",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Completed"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0OVVEA3"
+                },
+                "Id": "00T4z00007P0OVVEA3",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247PuJAAU",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007Ozb3fEAB"
+                },
+                "Id": "00T4z00007Ozb3fEAB",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247UkzAAE",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Completed"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0SqIEAV"
+                },
+                "Id": "00T4z00007P0SqIEAV",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247XBBAA2",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0R7bEAF"
+                },
+                "Id": "00T4z00007P0R7bEAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247Xu8AAE",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0Rh5EAF"
+                },
+                "Id": "00T4z00007P0Rh5EAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247Xv1AAE",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P028yEAB"
+                },
+                "Id": "00T4z00007P028yEAB",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247Xv1AAE",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Completed"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0U8nEAF"
+                },
+                "Id": "00T4z00007P0U8nEAF",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247YNXAA2",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            },
+            {
+                "attributes": {
+                    "type": "Task",
+                    "url": "/services/data/v38.0/sobjects/Task/00T4z00007P0JIwEAN"
+                },
+                "Id": "00T4z00007P0JIwEAN",
+                "Subject": "NPV Validation",
+                "WhatId": "0064z0000247Z3EAAU",
+                "Additional_Task_Response_Notes__c": null,
+                "Status": "Not Started"
+            }
+        ]
+    },
+    {
+        "totalSize": 11,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqrzaEAB"
+                },
+                "Id": "a0L4z00000EqrzaEAB",
+                "Order_Stage__c": "CSE Review",
+                "ICB_Lookup__c": "a064z00000Y5DaUAAV",
+                "Cor_Form__c": null,
+                "Name": "1813968",
+                "Opportunity__c": "0064z0000246mM6AAI",
+                "CPQ__c": null,
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 0.0,
+                "MAR__c": 0.0,
+                "MRR__c": 1075.0,
+                "Total_MRR__c": 1075.0,
+                "Term__c": 12.0,
+                "Bandwidth__c": "100Mb",
+                "Allocated_NPV_Calc__c": 6238.41,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqVejEAF"
+                },
+                "Id": "a0L4z00000EqVejEAF",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1797650",
+                "Opportunity__c": "0064z00002470spAAA",
+                "CPQ__c": "a2w4z000003emg7AAA",
+                "Tax_Fee_Pass_Through__c": 28.89,
+                "NRR__c": 1500.0,
+                "MAR__c": 41.67,
+                "MRR__c": 663.89,
+                "Total_MRR__c": 705.56,
+                "Term__c": 36.0,
+                "Bandwidth__c": "20Mb",
+                "Allocated_NPV_Calc__c": 5330.61,
+                "Netx_MRC__c": 200.0,
+                "Netx_NRC__c": 500.0,
+                "SO_Renewal_Interval_Months__c": null,
+                "SO_Notice_Period_Days__c": null
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqxN0EAJ"
+                },
+                "Id": "a0L4z00000EqxN0EAJ",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": "a064z00000Y5GEgAAN",
+                "Cor_Form__c": "a4s4z000002Hoc7AAC",
+                "Name": "1818002",
+                "Opportunity__c": "0064z0000247DElAAM",
+                "CPQ__c": null,
+                "Tax_Fee_Pass_Through__c": 18.38,
+                "NRR__c": 1000.0,
+                "MAR__c": 27.78,
+                "MRR__c": 1659.38,
+                "Total_MRR__c": 1687.16,
+                "Term__c": 36.0,
+                "Bandwidth__c": "1000Mb",
+                "Allocated_NPV_Calc__c": 14137.52,
+                "Netx_MRC__c": 1150.0,
+                "Netx_NRC__c": 500.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqpMTEAZ"
+                },
+                "Id": "a0L4z00000EqpMTEAZ",
+                "Order_Stage__c": "CSE Review",
+                "ICB_Lookup__c": "a064z00000Y5HHCAA3",
+                "Cor_Form__c": "a4s4z000002HpL2AAK",
+                "Name": "1812156",
+                "Opportunity__c": "0064z0000247LW8AAM",
+                "CPQ__c": null,
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 0.0,
+                "MAR__c": 0.0,
+                "MRR__c": 2000.0,
+                "Total_MRR__c": 2000.0,
+                "Term__c": 12.0,
+                "Bandwidth__c": "10G",
+                "Allocated_NPV_Calc__c": 402.49,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 60.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqpEAEAZ"
+                },
+                "Id": "a0L4z00000EqpEAEAZ",
+                "Order_Stage__c": "CSE Review",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1812052",
+                "Opportunity__c": "0064z0000247OdHAAU",
+                "CPQ__c": "a2w4z000003fdvFAAQ",
+                "Tax_Fee_Pass_Through__c": 69.05,
+                "NRR__c": 0.0,
+                "MAR__c": 0.0,
+                "MRR__c": 1109.05,
+                "Total_MRR__c": 1109.05,
+                "Term__c": 36.0,
+                "Bandwidth__c": "500Mb",
+                "Allocated_NPV_Calc__c": 8180.78,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 12.0,
+                "SO_Notice_Period_Days__c": 90.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqqC6EAJ"
+                },
+                "Id": "a0L4z00000EqqC6EAJ",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1812722",
+                "Opportunity__c": "0064z0000247PuJAAU",
+                "CPQ__c": "a2w4z000003eu4fAAA",
+                "Tax_Fee_Pass_Through__c": 18.91,
+                "NRR__c": 500.0,
+                "MAR__c": 13.89,
+                "MRR__c": 303.61,
+                "Total_MRR__c": 317.5,
+                "Term__c": 36.0,
+                "Bandwidth__c": "100Mb",
+                "Allocated_NPV_Calc__c": 9460.0,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqvYSEAZ"
+                },
+                "Id": "a0L4z00000EqvYSEAZ",
+                "Order_Stage__c": "CSE Review",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1817010",
+                "Opportunity__c": "0064z0000247VvjAAE",
+                "CPQ__c": "a2w4z000003ggZGAAY",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 500.0,
+                "MAR__c": 41.66,
+                "MRR__c": 325.0,
+                "Total_MRR__c": 366.66,
+                "Term__c": 12.0,
+                "Bandwidth__c": "100Mb",
+                "Allocated_NPV_Calc__c": 3799.65,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 12.0,
+                "SO_Notice_Period_Days__c": 90.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqwgZEAR"
+                },
+                "Id": "a0L4z00000EqwgZEAR",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1817545",
+                "Opportunity__c": "0064z0000247XBBAA2",
+                "CPQ__c": "a2w4z000003iaQfAAI",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 0.0,
+                "MAR__c": 0.0,
+                "MRR__c": 265.35,
+                "Total_MRR__c": 265.35,
+                "Term__c": 36.0,
+                "Bandwidth__c": "50Mb",
+                "Allocated_NPV_Calc__c": 7812.63,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqxK4EAJ"
+                },
+                "Id": "a0L4z00000EqxK4EAJ",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1817977",
+                "Opportunity__c": "0064z0000247Xu8AAE",
+                "CPQ__c": "a2w4z000003hSaKAAU",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 3000.0,
+                "MAR__c": 83.33,
+                "MRR__c": 950.0,
+                "Total_MRR__c": 1033.33,
+                "Term__c": 36.0,
+                "Bandwidth__c": "1G",
+                "Allocated_NPV_Calc__c": 25608.36,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 60.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqxKYEAZ"
+                },
+                "Id": "a0L4z00000EqxKYEAZ",
+                "Order_Stage__c": "6 - Pipeline",
+                "ICB_Lookup__c": null,
+                "Cor_Form__c": null,
+                "Name": "1817981",
+                "Opportunity__c": "0064z0000247Xv1AAE",
+                "CPQ__c": "a2w4z000003ic14AAA",
+                "Tax_Fee_Pass_Through__c": 0.0,
+                "NRR__c": 0.0,
+                "MAR__c": 0.0,
+                "MRR__c": 220.0,
+                "Total_MRR__c": 220.0,
+                "Term__c": 36.0,
+                "Bandwidth__c": "10Mb",
+                "Allocated_NPV_Calc__c": 49.34,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            },
+            {
+                "attributes": {
+                    "type": "Service_Order__c",
+                    "url": "/services/data/v38.0/sobjects/Service_Order__c/a0L4z00000EqxhPEAR"
+                },
+                "Id": "a0L4z00000EqxhPEAR",
+                "Order_Stage__c": "Order Submitted",
+                "ICB_Lookup__c": "a064z00000Y5HwKAAV",
+                "Cor_Form__c": null,
+                "Name": "1818209",
+                "Opportunity__c": "0064z0000247YNXAA2",
+                "CPQ__c": "a2w4z000003jCCrAAM",
+                "Tax_Fee_Pass_Through__c": 23.51,
+                "NRR__c": 3000.0,
+                "MAR__c": 250.0,
+                "MRR__c": 377.51,
+                "Total_MRR__c": 627.51,
+                "Term__c": 12.0,
+                "Bandwidth__c": "100Mb",
+                "Allocated_NPV_Calc__c": 4143.27,
+                "Netx_MRC__c": 0.0,
+                "Netx_NRC__c": 0.0,
+                "SO_Renewal_Interval_Months__c": 1.0,
+                "SO_Notice_Period_Days__c": 30.0
+            }
+        ]
+    },
+    {
+        "totalSize": 12,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087EHDEA2"
+                },
+                "Id": "a0R4z0000087EHDEA2",
+                "Status__c": "Open",
+                "Name": "146989",
+                "Opportunity__c": "0060z0000246O6wAAE",
+                "ICB_Approved_Amount__c": 2114.01
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JAeEAM"
+                },
+                "Id": "a0R4z0000087JAeEAM",
+                "Status__c": "Planned",
+                "Name": "150549",
+                "Opportunity__c": "0064z0000246mM6AAI",
+                "ICB_Approved_Amount__c": 2722.5345
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JBSEA2"
+                },
+                "Id": "a0R4z0000087JBSEA2",
+                "Status__c": "Planned",
+                "Name": "150558",
+                "Opportunity__c": "0064z00002470spAAA",
+                "ICB_Approved_Amount__c": 9550.0
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JBIEA2"
+                },
+                "Id": "a0R4z0000087JBIEA2",
+                "Status__c": "Planned",
+                "Name": "150556",
+                "Opportunity__c": "0064z0000247DElAAM",
+                "ICB_Approved_Amount__c": 545.0
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JD9EAM"
+                },
+                "Id": "a0R4z0000087JD9EAM",
+                "Status__c": "Planned",
+                "Name": "150576",
+                "Opportunity__c": "0064z0000247OdHAAU",
+                "ICB_Approved_Amount__c": 20754.7
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JAPEA2"
+                },
+                "Id": "a0R4z0000087JAPEA2",
+                "Status__c": "Planned",
+                "Name": "150547",
+                "Opportunity__c": "0064z0000247PuJAAU",
+                "ICB_Approved_Amount__c": 196.35
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087If2EAE"
+                },
+                "Id": "a0R4z0000087If2EAE",
+                "Status__c": "Open",
+                "Name": "150264",
+                "Opportunity__c": "0064z0000247UkzAAE",
+                "ICB_Approved_Amount__c": 542.85
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087Ij9EAE"
+                },
+                "Id": "a0R4z0000087Ij9EAE",
+                "Status__c": "Open",
+                "Name": "150317",
+                "Opportunity__c": "0064z0000247VvjAAE",
+                "ICB_Approved_Amount__c": 259.791
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JDEEA2"
+                },
+                "Id": "a0R4z0000087JDEEA2",
+                "Status__c": "Planned",
+                "Name": "150577",
+                "Opportunity__c": "0064z0000247XBBAA2",
+                "ICB_Approved_Amount__c": 196.35
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087JBcEAM"
+                },
+                "Id": "a0R4z0000087JBcEAM",
+                "Status__c": "Planned",
+                "Name": "150560",
+                "Opportunity__c": "0064z0000247Xu8AAE",
+                "ICB_Approved_Amount__c": 6020.7
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087IzgEAE"
+                },
+                "Id": "a0R4z0000087IzgEAE",
+                "Status__c": "Open",
+                "Name": "150433",
+                "Opportunity__c": "0064z0000247Xv1AAE",
+                "ICB_Approved_Amount__c": 6590.85
+            },
+            {
+                "attributes": {
+                    "type": "Capital_Project__c",
+                    "url": "/services/data/v38.0/sobjects/Capital_Project__c/a0R4z0000087J7QEAU"
+                },
+                "Id": "a0R4z0000087J7QEAU",
+                "Status__c": "Planned",
+                "Name": "150511",
+                "Opportunity__c": "0064z0000247Z3EAAU",
+                "ICB_Approved_Amount__c": 196.35
+            }
+        ]
+    },
+    {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "NetEx_Builder__c",
+                    "url": "/services/data/v38.0/sobjects/NetEx_Builder__c/a0A4z00000vUx05EAC"
+                },
+                "Id": "a0A4z00000vUx05EAC",
+                "Status__c": "Pending Install",
+                "Name": "842933",
+                "Opportunity__c": "0064z00002470spAAA",
+                "Netex_MRC__c": 200.0,
+                "Netex_NRC__c": 500.0
+            },
+            {
+                "attributes": {
+                    "type": "NetEx_Builder__c",
+                    "url": "/services/data/v38.0/sobjects/NetEx_Builder__c/a0A4z00000vUwtOEAS"
+                },
+                "Id": "a0A4z00000vUwtOEAS",
+                "Status__c": "Pending Approval",
+                "Name": "842842",
+                "Opportunity__c": "0064z0000247DElAAM",
+                "Netex_MRC__c": 1150.0,
+                "Netex_NRC__c": 500.0
+            },
+            {
+                "attributes": {
+                    "type": "NetEx_Builder__c",
+                    "url": "/services/data/v38.0/sobjects/NetEx_Builder__c/a0A4z00000vUx3sEAC"
+                },
+                "Id": "a0A4z00000vUx3sEAC",
+                "Status__c": "Pending Approval",
+                "Name": "842995",
+                "Opportunity__c": "0064z0000247PuJAAU",
+                "Netex_MRC__c": 200.0,
+                "Netex_NRC__c": 0.0
+            },
+            {
+                "attributes": {
+                    "type": "NetEx_Builder__c",
+                    "url": "/services/data/v38.0/sobjects/NetEx_Builder__c/a0A4z00000vUx47EAC"
+                },
+                "Id": "a0A4z00000vUx47EAC",
+                "Status__c": "Pending Install",
+                "Name": "842998",
+                "Opportunity__c": "0064z0000247PuJAAU",
+                "Netex_MRC__c": 20.0,
+                "Netex_NRC__c": 20.0
+            }
+        ]
+    },
+    {
+        "totalSize": 13,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w0z000003Q5ViAAK"
+                },
+                "Id": "a2w0z000003Q5ViAAK",
+                "CPQ_Status__c": "Approved",
+                "Name": "Quote-4793781",
+                "Opportunity__c": "0060z0000246O6wAAE",
+                "Total_Capex__c": 2114.007,
+                "X12_Netex_MRC__c": 0.0,
+                "X12_Netex_NRC__c": 0.0,
+                "X24_Netex_MRC__c": 0.0,
+                "X24_Netex_NRC__c": 0.0,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": 0.0,
+                "X60_Netex_NRC__c": 0.0,
+                "X12_MRC_Quote__c": 450.0,
+                "X24_MRC_Quote__c": 368.55,
+                "X36_MRC_Quote__c": 351.0,
+                "X60_MRC_Quote__c": 322.92,
+                "X12_NRR_Quote__c": 1000.0,
+                "X24_NRR_Quote__c": 1000.0,
+                "X36_NRR_Quote__c": 1000.0,
+                "X60_NRR_Quote__c": 1000.0
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003V6W2AAK"
+                },
+                "Id": "a2w4z000003V6W2AAK",
+                "CPQ_Status__c": "Approved",
+                "Name": "Quote-5184130",
+                "Opportunity__c": "0064z0000246mM6AAI",
+                "Total_Capex__c": 2722.5345,
+                "X12_Netex_MRC__c": 250.0,
+                "X12_Netex_NRC__c": 0.0,
+                "X24_Netex_MRC__c": 250.0,
+                "X24_Netex_NRC__c": 0.0,
+                "X36_Netex_MRC__c": 250.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": 250.0,
+                "X60_Netex_NRC__c": 0.0,
+                "X12_MRC_Quote__c": 802.0,
+                "X24_MRC_Quote__c": 754.54,
+                "X36_MRC_Quote__c": 715.78,
+                "X60_MRC_Quote__c": 678.52,
+                "X12_NRR_Quote__c": 0.0,
+                "X24_NRR_Quote__c": 878.42,
+                "X36_NRR_Quote__c": 878.42,
+                "X60_NRR_Quote__c": 878.42
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003emg7AAA"
+                },
+                "Id": "a2w4z000003emg7AAA",
+                "CPQ_Status__c": "Ordered",
+                "Name": "Quote-5284754",
+                "Opportunity__c": "0064z00002470spAAA",
+                "Total_Capex__c": 9450.0,
+                "X12_Netex_MRC__c": 200.0,
+                "X12_Netex_NRC__c": 500.0,
+                "X24_Netex_MRC__c": 200.0,
+                "X24_Netex_NRC__c": 500.0,
+                "X36_Netex_MRC__c": 200.0,
+                "X36_Netex_NRC__c": 500.0,
+                "X60_Netex_MRC__c": 200.0,
+                "X60_Netex_NRC__c": 500.0,
+                "X12_MRC_Quote__c": 1111.76,
+                "X24_MRC_Quote__c": 736.58,
+                "X36_MRC_Quote__c": 635.0,
+                "X60_MRC_Quote__c": 639.3,
+                "X12_NRR_Quote__c": 1500.0,
+                "X24_NRR_Quote__c": 1500.0,
+                "X36_NRR_Quote__c": 1500.0,
+                "X60_NRR_Quote__c": 1500.0
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003ftdCAAQ"
+                },
+                "Id": "a2w4z000003ftdCAAQ",
+                "CPQ_Status__c": "Approved",
+                "Name": "Quote-5357273",
+                "Opportunity__c": "0064z0000247DElAAM",
+                "Total_Capex__c": 77296.863,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 3675.94,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 1000.0,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003gzeSAAQ"
+                },
+                "Id": "a2w4z000003gzeSAAQ",
+                "CPQ_Status__c": "Draft",
+                "Name": "Quote-5431491",
+                "Opportunity__c": "0064z0000247LW8AAM",
+                "Total_Capex__c": 10491.789,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": null,
+                "X36_Netex_NRC__c": null,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": null,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": null,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003fdvFAAQ"
+                },
+                "Id": "a2w4z000003fdvFAAQ",
+                "CPQ_Status__c": "Order Pending",
+                "Name": "Quote-5340651",
+                "Opportunity__c": "0064z0000247OdHAAU",
+                "Total_Capex__c": 19754.7,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 1040.0,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003eu4fAAA"
+                },
+                "Id": "a2w4z000003eu4fAAA",
+                "CPQ_Status__c": "Ordered",
+                "Name": "Quote-5291720",
+                "Opportunity__c": "0064z0000247PuJAAU",
+                "Total_Capex__c": 196.35,
+                "X12_Netex_MRC__c": 0.0,
+                "X12_Netex_NRC__c": 0.0,
+                "X24_Netex_MRC__c": 0.0,
+                "X24_Netex_NRC__c": 0.0,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": 0.0,
+                "X60_Netex_NRC__c": 0.0,
+                "X12_MRC_Quote__c": 338.79,
+                "X24_MRC_Quote__c": 298.94,
+                "X36_MRC_Quote__c": 284.7,
+                "X60_MRC_Quote__c": 261.92,
+                "X12_NRR_Quote__c": 500.0,
+                "X24_NRR_Quote__c": 500.0,
+                "X36_NRR_Quote__c": 500.0,
+                "X60_NRR_Quote__c": 500.0
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003iFBZAA2"
+                },
+                "Id": "a2w4z000003iFBZAA2",
+                "CPQ_Status__c": "Order Pending",
+                "Name": "Quote-5523868",
+                "Opportunity__c": "0064z0000247UkzAAE",
+                "Total_Capex__c": 542.85,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 399.0,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003ggZGAAY"
+                },
+                "Id": "a2w4z000003ggZGAAY",
+                "CPQ_Status__c": "Order Pending",
+                "Name": "Quote-5410612",
+                "Opportunity__c": "0064z0000247VvjAAE",
+                "Total_Capex__c": 259.791,
+                "X12_Netex_MRC__c": 0.0,
+                "X12_Netex_NRC__c": 0.0,
+                "X24_Netex_MRC__c": 0.0,
+                "X24_Netex_NRC__c": 0.0,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": 0.0,
+                "X60_Netex_NRC__c": 0.0,
+                "X12_MRC_Quote__c": 325.0,
+                "X24_MRC_Quote__c": 305.0,
+                "X36_MRC_Quote__c": 275.0,
+                "X60_MRC_Quote__c": 253.0,
+                "X12_NRR_Quote__c": 500.0,
+                "X24_NRR_Quote__c": 500.0,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": 0.0
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003iaQfAAI"
+                },
+                "Id": "a2w4z000003iaQfAAI",
+                "CPQ_Status__c": "Ordered",
+                "Name": "Quote-5550998",
+                "Opportunity__c": "0064z0000247XBBAA2",
+                "Total_Capex__c": 196.35,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 265.35,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003hSaKAAU"
+                },
+                "Id": "a2w4z000003hSaKAAU",
+                "CPQ_Status__c": "Ordered",
+                "Name": "Quote-5462985",
+                "Opportunity__c": "0064z0000247Xu8AAE",
+                "Total_Capex__c": 6020.7,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 950.0,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 3000.0,
+                "X60_NRR_Quote__c": null
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003ic14AAA"
+                },
+                "Id": "a2w4z000003ic14AAA",
+                "CPQ_Status__c": "Ordered",
+                "Name": "Quote-5551867",
+                "Opportunity__c": "0064z0000247Xv1AAE",
+                "Total_Capex__c": 6590.85,
+                "X12_Netex_MRC__c": 0.0,
+                "X12_Netex_NRC__c": 0.0,
+                "X24_Netex_MRC__c": 0.0,
+                "X24_Netex_NRC__c": 0.0,
+                "X36_Netex_MRC__c": 0.0,
+                "X36_Netex_NRC__c": 0.0,
+                "X60_Netex_MRC__c": 0.0,
+                "X60_Netex_NRC__c": 0.0,
+                "X12_MRC_Quote__c": 550.53,
+                "X24_MRC_Quote__c": 425.0,
+                "X36_MRC_Quote__c": 220.0,
+                "X60_MRC_Quote__c": 331.0,
+                "X12_NRR_Quote__c": 1500.0,
+                "X24_NRR_Quote__c": 750.0,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": 0.0
+            },
+            {
+                "attributes": {
+                    "type": "CPQ__c",
+                    "url": "/services/data/v38.0/sobjects/CPQ__c/a2w4z000003hydDAAQ"
+                },
+                "Id": "a2w4z000003hydDAAQ",
+                "CPQ_Status__c": "Order Pending",
+                "Name": "Quote-5503884",
+                "Opportunity__c": "0064z0000247Z3EAAU",
+                "Total_Capex__c": 196.35,
+                "X12_Netex_MRC__c": null,
+                "X12_Netex_NRC__c": null,
+                "X24_Netex_MRC__c": null,
+                "X24_Netex_NRC__c": null,
+                "X36_Netex_MRC__c": 300.0,
+                "X36_Netex_NRC__c": 1000.0,
+                "X60_Netex_MRC__c": null,
+                "X60_Netex_NRC__c": null,
+                "X12_MRC_Quote__c": null,
+                "X24_MRC_Quote__c": null,
+                "X36_MRC_Quote__c": 850.0,
+                "X60_MRC_Quote__c": null,
+                "X12_NRR_Quote__c": null,
+                "X24_NRR_Quote__c": null,
+                "X36_NRR_Quote__c": 0.0,
+                "X60_NRR_Quote__c": null
+            }
+        ]
+    },
+    {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+            {
+                "attributes": {
+                    "type": "Cor_Form__c",
+                    "url": "/services/data/v38.0/sobjects/Cor_Form__c/a4s4z000002HlnRAAS"
+                },
+                "Id": "a4s4z000002HlnRAAS",
+                "Name": "COR# 00151638",
+                "Special_Pricing_ICB__c": "a064z00000Y5DaUAAV",
+                "Special_Pricing_ICB__r": {
+                    "attributes": {
+                        "type": "Special_Pricing_ICB__c",
+                        "url": "/services/data/v38.0/sobjects/Special_Pricing_ICB__c/a064z00000Y5DaUAAV"
+                    },
+                    "Opportunity_Lookup__c": "0064z0000246mM6AAI"
+                },
+                "Expense_MRC_Yr1__c": 125.0,
+                "Expense_NRC_Yr1__c": 0.0,
+                "Expense_MRC_Yr2__c": 125.0,
+                "Expense_NRC_Yr2__c": 0.0,
+                "Expense_MRC_Yr3__c": 125.0,
+                "Expense_NRC_Yr3__c": 0.0,
+                "Expense_MRC_Yr5__c": 0.0,
+                "Expense_NRC_Yr5__c": 0.0,
+                "Total_Success_Based_Capital__c": 4271.4
+            },
+            {
+                "attributes": {
+                    "type": "Cor_Form__c",
+                    "url": "/services/data/v38.0/sobjects/Cor_Form__c/a4s4z000002HpJzAAK"
+                },
+                "Id": "a4s4z000002HpJzAAK",
+                "Name": "COR# 00154299",
+                "Special_Pricing_ICB__c": "a064z00000Y5DaUAAV",
+                "Special_Pricing_ICB__r": {
+                    "attributes": {
+                        "type": "Special_Pricing_ICB__c",
+                        "url": "/services/data/v38.0/sobjects/Special_Pricing_ICB__c/a064z00000Y5DaUAAV"
+                    },
+                    "Opportunity_Lookup__c": "0064z0000246mM6AAI"
+                },
+                "Expense_MRC_Yr1__c": 0.0,
+                "Expense_NRC_Yr1__c": 0.0,
+                "Expense_MRC_Yr2__c": 0.0,
+                "Expense_NRC_Yr2__c": 0.0,
+                "Expense_MRC_Yr3__c": 0.0,
+                "Expense_NRC_Yr3__c": 0.0,
+                "Expense_MRC_Yr5__c": 0.0,
+                "Expense_NRC_Yr5__c": 0.0,
+                "Total_Success_Based_Capital__c": 4271.4
+            },
+            {
+                "attributes": {
+                    "type": "Cor_Form__c",
+                    "url": "/services/data/v38.0/sobjects/Cor_Form__c/a4s4z000002Hoc7AAC"
+                },
+                "Id": "a4s4z000002Hoc7AAC",
+                "Name": "COR# 00153756",
+                "Special_Pricing_ICB__c": "a064z00000Y5GEgAAN",
+                "Special_Pricing_ICB__r": {
+                    "attributes": {
+                        "type": "Special_Pricing_ICB__c",
+                        "url": "/services/data/v38.0/sobjects/Special_Pricing_ICB__c/a064z00000Y5GEgAAN"
+                    },
+                    "Opportunity_Lookup__c": "0064z0000247DElAAM"
+                },
+                "Expense_MRC_Yr1__c": 0.0,
+                "Expense_NRC_Yr1__c": 0.0,
+                "Expense_MRC_Yr2__c": 0.0,
+                "Expense_NRC_Yr2__c": 0.0,
+                "Expense_MRC_Yr3__c": 1150.0,
+                "Expense_NRC_Yr3__c": 500.0,
+                "Expense_MRC_Yr5__c": 0.0,
+                "Expense_NRC_Yr5__c": 0.0,
+                "Total_Success_Based_Capital__c": 545
+            },
+            {
+                "attributes": {
+                    "type": "Cor_Form__c",
+                    "url": "/services/data/v38.0/sobjects/Cor_Form__c/a4s4z000002HpL2AAK"
+                },
+                "Id": "a4s4z000002HpL2AAK",
+                "Name": "COR# 00154312",
+                "Special_Pricing_ICB__c": "a064z00000Y5HHCAA3",
+                "Special_Pricing_ICB__r": {
+                    "attributes": {
+                        "type": "Special_Pricing_ICB__c",
+                        "url": "/services/data/v38.0/sobjects/Special_Pricing_ICB__c/a064z00000Y5HHCAA3"
+                    },
+                    "Opportunity_Lookup__c": "0064z0000247LW8AAM"
+                },
+                "Expense_MRC_Yr1__c": 212.38,
+                "Expense_NRC_Yr1__c": 1747.45,
+                "Expense_MRC_Yr2__c": 0.0,
+                "Expense_NRC_Yr2__c": 0.0,
+                "Expense_MRC_Yr3__c": 0.0,
+                "Expense_NRC_Yr3__c": 0.0,
+                "Expense_MRC_Yr5__c": 0.0,
+                "Expense_NRC_Yr5__c": 0.0,
+                "Total_Success_Based_Capital__c": 17416.72755203357
+            }
+        ]
+    }
+]
