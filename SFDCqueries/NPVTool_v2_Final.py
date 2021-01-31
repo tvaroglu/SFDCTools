@@ -206,6 +206,7 @@ for o in oppsToValidate:
 
 ## This block checks Opp vs Quote or COR form, based on Workflow Type. If anything doesn't align between the two, the Opp is excluded from future validation stages.
 cleanOppToCORorQuote = []
+validTermLengths = [12.0, 24.0, 36.0, 60.0]
 for c in cleanOppToSOs:
     for o in oppsToValidate:
         opptyID = o['Id']
@@ -258,6 +259,8 @@ for c in cleanOppToSOs:
                         custNRCheck = opptyNRR == quote60NRC
                         netxMRCheck = opptyNetexMRC == quoteNetx60MRC
                         netxNRCheck = opptyNetexNRC == quoteNetx60NRC
+                    elif opptyTerm not in validTermLengths:
+                        continue
                     if capexCheck and custMRCheck and custNRCheck and netxMRCheck and netxNRCheck and c not in cleanOppToCORorQuote:
                         # print(c, opptyID, relatedOppty)
                         # print(opptyCapex, totalCapex)
@@ -299,6 +302,8 @@ for c in cleanOppToSOs:
                     elif opptyTerm == 60.0:
                         netxMRCheck = opptyNetexMRC == NetexMRC60mo
                         netxNRCheck = opptyNetexNRC == NetexNRC60mo
+                    elif opptyTerm not in validTermLengths:
+                        continue
                     if capexCheck and netxMRCheck and netxNRCheck and c not in cleanOppToCORorQuote:
                         # print(c, opptyID, relatedOppty)
                         # print(opptyCapex, totalCapex)
