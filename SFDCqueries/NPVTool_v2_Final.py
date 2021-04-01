@@ -10,8 +10,6 @@ today = date.today()
 import datetime as dt
 
 import csv
-import xlrd
-from openpyxl.workbook import Workbook
 
 from simple_salesforce import Salesforce, SalesforceLogin
 from pandas import DataFrame

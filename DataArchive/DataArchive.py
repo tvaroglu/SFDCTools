@@ -10,7 +10,7 @@ import datetime as dt
 from FileFinder import retrieveWoWFile
 
 import csv
-import xlrd
+import xlrd, openpyxl
 from openpyxl.workbook import Workbook
 
 from simple_salesforce import Salesforce, SalesforceLogin
