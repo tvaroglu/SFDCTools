@@ -9,6 +9,7 @@ import datetime as dt
 today = date.today()
 
 from extract import Extractor
+from transform import Transformer
 ## Modify boolean as needed, if testing directly from static JSON blobs or performing execution of SOQL queries:
 full_soql_query_mode = False
 
@@ -86,43 +87,8 @@ npv_tasks_to_validate = target_dict_list[1]['records']
 print('All data successfully queried. Any errors after this point are due to DATA VALIDATION ONLY.')
 
 
-## This block checks Opp vs SO financial field values. If anything doesn't align between the two, the Opp is excluded from future validation stages.
-cleanOppToSOs = []
-for o in opps_to_validate:
-    opptyID = o['Id']
-    opptyAmount = o['Amount']
-    opptyTax = o['Tax_Fee_Pass_Through__c']
-    opptyNRR = o['Installation_NRR__c']
-    opptyMAR = o['Total_MAR__c']
-    opptyTerm = o['Term_in_Months__c']
-    opptyNetexMRC = o['Netex_MRC_Approved__c']
-    opptyNetexNRC = o['Netex_NRC_Approved__c']
-    for s in service_orders_to_validate:
-        soRawMRR = s['MRR__c'] - s['Tax_Fee_Pass_Through__c']
-        soTax = s['Tax_Fee_Pass_Through__c']
-        soNRR = s['NRR__c']
-        soMAR = s['MAR__c']
-        soTerm = s['Term__c']
-        soNetexMRC = s['Netx_MRC__c']
-        soNetexNRC = s['Netx_NRC__c']
-        if opptyID == s['Opportunity__c']:
-            amountCheck = opptyAmount == soRawMRR
-            taxCheck = opptyTax == soTax
-            nrrCheck = opptyNRR == soNRR
-            marCheck = opptyMAR == soMAR
-            termCheck = opptyTerm == soTerm
-            netexMRCheck = opptyNetexMRC == soNetexMRC
-            netexNRCheck = opptyNetexNRC == soNetexNRC
-            if amountCheck and taxCheck and nrrCheck and marCheck and termCheck and netexMRCheck and netexNRCheck and opptyID not in cleanOppToSOs:
-                # print(opptyID, s['Opportunity__c'])
-                # print(opptyAmount, soRawMRR)
-                # print(opptyTax, soTax)
-                # print(opptyMAR, soMAR)
-                # print(opptyTerm, soTerm)
-                # print(opptyNetexMRC, soNetexMRC)
-                # print(opptyNetexMRC, soNetexMRC)
-                cleanOppToSOs.append(opptyID)
-# print(cleanOppToSOs)
+t = Transformer()
+cleanOppToSOs = t.validate_opp_to_service_order(opps_to_validate, service_orders_to_validate)
 
 ## This block checks Opp vs Quote or COR form, based on Workflow Type. If anything doesn't align between the two, the Opp is excluded from future validation stages.
 cleanOppToCORorQuote = []
