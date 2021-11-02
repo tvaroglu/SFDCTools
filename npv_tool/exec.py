@@ -1,167 +1,90 @@
-import unittest
+import pprint
+pp = pprint.PrettyPrinter(indent=2)
 import shutil
 import os
 import json
-import pprint
-pp = pprint.PrettyPrinter(indent=2)
-
-from datetime import date, datetime, timedelta
-today = date.today()
-import datetime as dt
-
 import csv
+from datetime import date, datetime, timedelta
+import datetime as dt
+today = date.today()
 
-# from simple_salesforce import Salesforce, SalesforceLogin
-# from pandas import DataFrame
-# import pandas as pd
-# import numpy as np
-
-
-
-
-
-##SOQL example to pull JSON for Quotes:
-# def soqlJSON(quote):  # pylint: disable=unused-variable
-#     soql_query = 'SELECT Name, CPQ_JSON__c \
-#     FROM CPQ__c \
-#     WHERE (Name = "Quote-2347669")'
-
-
-### DATA QUERY PARAMETERS:
-## SOQL
-
-class EXTRACT:
-    @staticmethod
-    def get_opp_info():
-        ### Expand or reduce opp types and/or RBG's as needed. Adjust limit as needed (total data size)
-        soql = "SELECT Id, Name, CloseDate, Opportunity_Type__c, Total_MRR_Calc__c, Bandwidth__c, Reporting_Business_Group__c, Opportunity_Workflow_Type__c, StageName, Tax_Fee_Pass_Through__c, Installation_NRR__c, Total_MAR__c, Total_MRR__c, Term_in_Months__c, NPV__c, Netex_MRC_Approved__c, Netex_NRC_Approved__c, Total_Success_Based_Capex_Calc__c, Amount, Account.Name from Opportunity where Reporting_Business_Group__c in ('Ethernet', 'CloudLink', 'WAN') and StageName = '4 - Closed' and NPV__c >= 0 and CloseDate >= 2021-01-01 and Opportunity_Type__c in ('New Service', 'Positive Re-Rate/Move/Change', 'Negative Re-Rate/Move/Change') and Account.Intercompany_Account__c = false LIMIT 100"
-        return soql
-
-    def get_npv_task(self, stringers):
-        soql = "SELECT Id, Subject, WhatId, Additional_Task_Response_Notes__c, Status from Task where WhatId in (" + stringers + ") and Subject = 'NPV Validation' and Status in ('Not Started', 'In Progress')"
-        return soql
-
-    def get_so_info(self, stringers):
-        soql = "SELECT Id, Order_Stage__c, ICB_Lookup__c, Cor_Form__c, Name, Opportunity__c, CPQ__c, Tax_Fee_Pass_Through__c, NRR__c, MAR__c, MRR__c, Total_MRR__c, Term__c, Bandwidth__c, Allocated_NPV_Calc__c, Netx_MRC__c, Netx_NRC__c, SO_Renewal_Interval_Months__c, SO_Notice_Period_Days__c from Service_Order__c  WHERE Opportunity__c in (" + stringers + ") and Order_Stage__c in ('6 - Pipeline', '7 - Ready for Billing', '8 - Accepted by Billing', '9 - Billing Updated')"
-        return soql
-
-    def get_capital_project_info(self, stringers):
-        soql = "SELECT Id, Status__c, Name, Opportunity__c, ICB_Approved_Amount__c from Capital_Project__c  Where Status__c != 'Cancelled' and Opportunity__c in (" + stringers + ")"
-        return soql
-
-    def get_expense_builder_info(self, stringers):
-        soql = "SELECT Id, Status__c, Name, Opportunity__c, Netex_MRC__c, Netex_NRC__c from NetEx_Builder__c Where Status__c != 'Cancelled' and Opportunity__c in (" + stringers + ")"
-        return soql
-
-    def get_quote_info(self, stringers):
-        soql = "SELECT Id, CPQ_Status__c, Name, Opportunity__c, Total_Capex__c, X12_Netex_MRC__c, X12_Netex_NRC__c, X24_Netex_MRC__c, X24_Netex_NRC__c, X36_Netex_MRC__c, X36_Netex_NRC__c, X60_Netex_MRC__c, X60_Netex_NRC__c, X12_MRC_Quote__c, X24_MRC_Quote__c, X36_MRC_Quote__c, X60_MRC_Quote__c, X12_NRR_Quote__c, X24_NRR_Quote__c, X36_NRR_Quote__c, X60_NRR_Quote__c from CPQ__c  Where Opportunity__c in (" + stringers + ")"
-        return soql
-
-    def get_cor_form_info(self, stringers):
-        soql = "SELECT Id, Name, Special_Pricing_ICB__c, Special_Pricing_ICB__r.Opportunity_Lookup__c, Expense_MRC_Yr1__c, Expense_NRC_Yr1__c, Expense_MRC_Yr2__c, Expense_NRC_Yr2__c, Expense_MRC_Yr3__c, Expense_NRC_Yr3__c, Expense_MRC_Yr5__c, Expense_NRC_Yr5__c, Total_Success_Based_Capital__c from Cor_Form__c Where Special_Pricing_ICB__r.Status__c = 'Approved' and Special_Pricing_ICB__r.Opportunity_Lookup__c in (" + stringers + ")"
-        return soql
-
-
-    def format_opp_ids(self, Opps, size):
-        stringers = ''
-        for x in range(0,size-1):
-            stringers = "'" + Opps['records'][x]['Id'] + "'," + stringers
-        stringers = stringers + "'" + Opps['records'][size-1]['Id'] + "'"
-        return stringers
-
-
-## Execution of SOQL Queries (**modify boolean as needed, if testing directly from static JSON blobs)
-fullSoqlQueryMode = False
+from extract import Extractor
+## Modify boolean as needed, if testing directly from static JSON blobs or performing execution of SOQL queries:
+full_soql_query_mode = False
 
 ## SFDC API AUTH:
 # auth is a separate Python module as a placeholder to store SFDC creds. Ref required params as follows:
 # sf = Salesforce(username='username', password='password', security_token='token', client_id='Testing', \
     # instance_url='https://zayo.my.salesforce.com', session_id='')
-
-if fullSoqlQueryMode == True:
+if full_soql_query_mode == True:
+    from simple_salesforce import Salesforce, SalesforceLogin
     from auth import sf
-    temp = EXTRACT()
-    OppQuery = temp.get_opp_info()
-    OppOutput = sf.query_all(OppQuery)
-    # recordsonly = OppOutput['records']
-    size = OppOutput['totalSize']
-    # pp.pprint(OppOutput)
 
-    stringers = temp.format_opp_ids(OppOutput, size)
-    NPVTaskQuery = temp.get_npv_task(stringers)
-    NPVTaskOutput = sf.query_all(NPVTaskQuery)
-    # pp.pprint(NPVTaskOutput)
+    e = Extractor()
+    opp_query = e.get_opp_info()
+    opp_output = sf.query_all(opp_query)
+    records_only = opp_output['records']
+    size = opp_output['totalSize']
+    formatted_opp_ids = e.format_opp_ids(opp_output, size)
 
-    ServiceOrderQuery = temp.get_so_info(stringers)
-    ServiceOrderOutput = sf.query_all(ServiceOrderQuery)
-    # pp.pprint(ServiceOrderOutput)
+    npv_task_query = e.get_npv_task(formatted_opp_ids)
+    npv_task_output = sf.query_all(npv_task_query)
 
-    CapProjQuery = temp.get_capital_project_info(stringers)
-    CapProjOutput = sf.query_all(CapProjQuery)
-    # pp.pprint(CapProjOutput)
+    service_order_query = e.get_so_info(formatted_opp_ids)
+    service_order_output = sf.query_all(service_order_query)
 
-    ExpenseBuilderQuery = temp.get_expense_builder_info(stringers)
-    ExpenseBuilderOutput = sf.query_all(ExpenseBuilderQuery)
-    # pp.pprint(ExpenseBuilderOutput)
+    cap_proj_query = e.get_capital_project_info(formatted_opp_ids)
+    cap_proj_output = sf.query_all(cap_proj_query)
 
-    QuoteQuery = temp.get_quote_info(stringers)
-    QuoteOutput = sf.query_all(QuoteQuery)
-    # pp.pprint(QuoteOutput)
+    expense_builder_query = e.get_expense_builder_info(formatted_opp_ids)
+    expense_builder_output = sf.query_all(expense_builder_query)
 
-    CORFormQuery = temp.get_cor_form_info(stringers)
-    CORFormOutput = sf.query_all(CORFormQuery)
-    # pp.pprint(CORFormOutput)
+    quote_query = e.get_quote_info(formatted_opp_ids)
+    quote_output = sf.query_all(quote_query)
 
-    finalDictList = [
-        OppOutput,
-        NPVTaskOutput,
-        ServiceOrderOutput,
-        CapProjOutput,
-        ExpenseBuilderOutput,
-        QuoteOutput,
-        CORFormOutput
+    cor_form_query = e.get_cor_form_info(formatted_opp_ids)
+    cor_form_output = sf.query_all(cor_form_query)
+
+    final_dict_list = [
+        opp_output,
+        npv_task_output,
+        service_order_output,
+        cap_proj_output,
+        expense_builder_output,
+        quote_output,
+        cor_form_output
     ]
 
-    # pp.pprint(finalDictList)
-    # for d in finalDictList:
-    #     print(len(d['records']))
+base_path = os.path.dirname(__file__)
+blob_master = f'{base_path}/SOQL_shell.json'
+### Modify booleans as needed
+## (read/write vs read only, if running in production/directly from the SimpleSalesforce API):
+j_dump_write = False
+j_dump_read = True
 
+if j_dump_write == True and full_soql_query_mode == True:
+    with open(blob_master, 'w') as writer:
+        json.dump(final_dict_list, writer, indent=4)
 
-### JSON Dump for Testing (**modify this block as needed, if running in production/directly from the SimpleSalesforce API)
-## Edit dir structure as appropriate:
-localPathList = os.path.dirname(__file__)
-blobMaster = f'{localPathList}/SOQL_JSON_SHELL.json'
-
-## Modify booleans as needed (read/write vs read only):
-jDumpWrite = False
-jDumpRead = True
-
-if jDumpWrite == True and fullSoqlQueryMode == True:
-    with open(blobMaster, 'w') as writer:
-        json.dump(finalDictList, writer, indent=4)
-
-if jDumpRead == True:
-    with open(blobMaster, 'r') as reader:
+if j_dump_read == True:
+    with open(blob_master, 'r') as reader:
         envdata = json.load(reader)
-        # pp.pprint(envdata)
 
+if full_soql_query_mode == True:
+    target_dict_list = final_dict_list
+else:
+    target_dict_list = envdata
 print('All data successfully queried. Any errors after this point are due to DATA VALIDATION ONLY.')
 
 
 
-### TRANSFORM
-if fullSoqlQueryMode == True:
-    targetDictList = finalDictList
-else:
-    targetDictList = envdata
-
-oppsToValidate = targetDictList[0]['records']
-SOsToValidate = targetDictList[2]['records']
-quotesToValidate = targetDictList[5]['records']
-targetCORforms = targetDictList[6]['records']
-CPsToValidate = targetDictList[3]['records']
-EBsToValidate = targetDictList[4]['records']
-npvTasksToValidate = targetDictList[1]['records']
+oppsToValidate = target_dict_list[0]['records']
+SOsToValidate = target_dict_list[2]['records']
+quotesToValidate = target_dict_list[5]['records']
+targetCORforms = target_dict_list[6]['records']
+CPsToValidate = target_dict_list[3]['records']
+EBsToValidate = target_dict_list[4]['records']
+npvTasksToValidate = target_dict_list[1]['records']
 
 
 ## This block checks Opp vs SO financial field values. If anything doesn't align between the two, the Opp is excluded from future validation stages.
