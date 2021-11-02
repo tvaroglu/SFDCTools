@@ -11,10 +11,10 @@ import datetime as dt
 
 import csv
 
-from simple_salesforce import Salesforce, SalesforceLogin
-from pandas import DataFrame
-import pandas as pd
-import numpy as np
+# from simple_salesforce import Salesforce, SalesforceLogin
+# from pandas import DataFrame
+# import pandas as pd
+# import numpy as np
 
 
 
@@ -61,7 +61,7 @@ class EXTRACT:
         soql = "SELECT Id, Name, Special_Pricing_ICB__c, Special_Pricing_ICB__r.Opportunity_Lookup__c, Expense_MRC_Yr1__c, Expense_NRC_Yr1__c, Expense_MRC_Yr2__c, Expense_NRC_Yr2__c, Expense_MRC_Yr3__c, Expense_NRC_Yr3__c, Expense_MRC_Yr5__c, Expense_NRC_Yr5__c, Total_Success_Based_Capital__c from Cor_Form__c Where Special_Pricing_ICB__r.Status__c = 'Approved' and Special_Pricing_ICB__r.Opportunity_Lookup__c in (" + stringers + ")"
         return soql
 
-    
+
     def format_opp_ids(self, Opps, size):
         stringers = ''
         for x in range(0,size-1):
@@ -71,7 +71,7 @@ class EXTRACT:
 
 
 ## Execution of SOQL Queries (**modify boolean as needed, if testing directly from static JSON blobs)
-fullSoqlQueryMode = True
+fullSoqlQueryMode = False
 
 ## SFDC API AUTH:
 # auth is a separate Python module as a placeholder to store SFDC creds. Ref required params as follows:
@@ -129,12 +129,12 @@ if fullSoqlQueryMode == True:
 
 ### JSON Dump for Testing (**modify this block as needed, if running in production/directly from the SimpleSalesforce API)
 ## Edit dir structure as appropriate:
-localPathList = 'C:/Users/tvaroglu/Desktop/Product Dev/Coding/Testing/SFDCTools/SFDCqueries/'
-blobMaster = localPathList + 'SOQL_JSON_Shell.json'
+localPathList = os.path.dirname(__file__)
+blobMaster = f'{localPathList}/SOQL_JSON_SHELL.json'
 
 ## Modify booleans as needed (read/write vs read only):
 jDumpWrite = False
-jDumpRead = False
+jDumpRead = True
 
 if jDumpWrite == True and fullSoqlQueryMode == True:
     with open(blobMaster, 'w') as writer:
@@ -342,7 +342,7 @@ for clean in cleanOppToCORorQuote:
                 ]
 # pp.pprint(cpOppShell)
 # pp.pprint(ebOppShell)
-for cleaned in cleanOppToCORorQuote:      
+for cleaned in cleanOppToCORorQuote:
     for o in oppsToValidate:
         opptyID = o['Id']
         opptyCapex = o['Total_Success_Based_Capex_Calc__c']
@@ -406,27 +406,27 @@ for c in cleanOppToCORorQuote:
                     ebCk = True
                 if cpCk and ebCk and c not in finalOppToTaskIdOutput:
                     finalOppToTaskIdOutput.append(c)
-# print(finalOppToTaskIdOutput)
+print(finalOppToTaskIdOutput)
 ## Everything is correct, NPV task can now be validated:
-npvTasksToClose = []
-for f in finalOppToTaskIdOutput:
-    for n in npvTasksToValidate:
-        taskId = n['Id']
-        associatedOppId = n['WhatId']
-        if f == associatedOppId and taskId not in npvTasksToClose:
-            npvTasksToClose.append(taskId)
-for task in npvTasksToClose:
-    test = sf.Task.update(
-        task, 
-        {
-            'Status': 'Completed', 
-            'OwnerId': '00560000001hYAUAA2', 
-            'Additional_Task_Response_Notes__c': 
-            'Completed via Automation'
-            }
-            )
-if len(npvTasksToClose) == 0:
-    print('0 NPV tasks validated by automation.')
-elif len(npvTasksToClose) > 0:
-    print('{} NPV tasks {} validated by automation. Please move to Stage 5 via the corresponding report queue: \n \
-        https://zayo.my.salesforce.com/00O0z000005btK4'.format(len(npvTasksToClose), npvTasksToClose))
+# npvTasksToClose = []
+# for f in finalOppToTaskIdOutput:
+#     for n in npvTasksToValidate:
+#         taskId = n['Id']
+#         associatedOppId = n['WhatId']
+#         if f == associatedOppId and taskId not in npvTasksToClose:
+#             npvTasksToClose.append(taskId)
+# for task in npvTasksToClose:
+#     test = sf.Task.update(
+#         task,
+#         {
+#             'Status': 'Completed',
+#             'OwnerId': '00560000001hYAUAA2',
+#             'Additional_Task_Response_Notes__c':
+#             'Completed via Automation'
+#             }
+#             )
+# if len(npvTasksToClose) == 0:
+#     print('0 NPV tasks validated by automation.')
+# elif len(npvTasksToClose) > 0:
+#     print('{} NPV tasks {} validated by automation. Please move to Stage 5 via the corresponding report queue: \n \
+#         https://zayo.my.salesforce.com/00O0z000005btK4'.format(len(npvTasksToClose), npvTasksToClose))
