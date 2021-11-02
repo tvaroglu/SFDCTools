@@ -74,22 +74,21 @@ if full_soql_query_mode == True:
     target_dict_list = final_dict_list
 else:
     target_dict_list = envdata
+
+opps_to_validate = target_dict_list[0]['records']
+service_orders_to_validate = target_dict_list[2]['records']
+quotes_to_validate = target_dict_list[5]['records']
+cor_forms_to_validate = target_dict_list[6]['records']
+cap_projects_to_validate = target_dict_list[3]['records']
+expense_builders_to_validate = target_dict_list[4]['records']
+npv_tasks_to_validate = target_dict_list[1]['records']
+
 print('All data successfully queried. Any errors after this point are due to DATA VALIDATION ONLY.')
-
-
-
-oppsToValidate = target_dict_list[0]['records']
-SOsToValidate = target_dict_list[2]['records']
-quotesToValidate = target_dict_list[5]['records']
-targetCORforms = target_dict_list[6]['records']
-CPsToValidate = target_dict_list[3]['records']
-EBsToValidate = target_dict_list[4]['records']
-npvTasksToValidate = target_dict_list[1]['records']
 
 
 ## This block checks Opp vs SO financial field values. If anything doesn't align between the two, the Opp is excluded from future validation stages.
 cleanOppToSOs = []
-for o in oppsToValidate:
+for o in opps_to_validate:
     opptyID = o['Id']
     opptyAmount = o['Amount']
     opptyTax = o['Tax_Fee_Pass_Through__c']
@@ -98,7 +97,7 @@ for o in oppsToValidate:
     opptyTerm = o['Term_in_Months__c']
     opptyNetexMRC = o['Netex_MRC_Approved__c']
     opptyNetexNRC = o['Netex_NRC_Approved__c']
-    for s in SOsToValidate:
+    for s in service_orders_to_validate:
         soRawMRR = s['MRR__c'] - s['Tax_Fee_Pass_Through__c']
         soTax = s['Tax_Fee_Pass_Through__c']
         soNRR = s['NRR__c']
@@ -129,7 +128,7 @@ for o in oppsToValidate:
 cleanOppToCORorQuote = []
 validTermLengths = [12.0, 24.0, 36.0, 60.0]
 for c in cleanOppToSOs:
-    for o in oppsToValidate:
+    for o in opps_to_validate:
         opptyID = o['Id']
         opptyCapex = o['Total_Success_Based_Capex_Calc__c']
         opptyTerm = o['Term_in_Months__c']
@@ -139,7 +138,7 @@ for c in cleanOppToSOs:
         opptyNetexNRC = o['Netex_NRC_Approved__c']
         opptyWorkflowType = o['Opportunity_Workflow_Type__c']
         if c == opptyID and opptyWorkflowType in ('Standard Pricing', 'Tranzact Custom Solution', 'ASR (Automated)'):
-            for q in quotesToValidate:
+            for q in quotes_to_validate:
                 relatedOppty = q['Opportunity__c']
                 totalCapex = q['Total_Capex__c']
                 quote12MRC = q['X12_MRC_Quote__c']
@@ -198,7 +197,7 @@ for c in cleanOppToSOs:
                         # print(quoteNetx60MRC, quoteNetx60NRC)
                         cleanOppToCORorQuote.append(c)
         elif c == opptyID and opptyWorkflowType == 'Custom Solution':
-            for t in targetCORforms:
+            for t in cor_forms_to_validate:
                 relatedOppty = t['Special_Pricing_ICB__r']['Opportunity_Lookup__c']
                 totalCapex = t['Total_Success_Based_Capital__c']
                 NetexMRC12mo = t['Expense_MRC_Yr1__c']
@@ -247,12 +246,12 @@ for c in cleanOppToSOs:
 cleanOpptoCPandEB = []
 cpOppShell = {}
 ebOppShell = {}
-for p in CPsToValidate:
+for p in cap_projects_to_validate:
     cpOppShell[p['Opportunity__c']] = p['ICB_Approved_Amount__c']
 for clean in cleanOppToCORorQuote:
     totalNetxMRC = 0
     totalNetxNRC = 0
-    for e in EBsToValidate:
+    for e in expense_builders_to_validate:
         Id = e['Id']
         oppID = e['Opportunity__c']
         netXMRC = e['Netex_MRC__c']
@@ -266,7 +265,7 @@ for clean in cleanOppToCORorQuote:
 # pp.pprint(cpOppShell)
 # pp.pprint(ebOppShell)
 for cleaned in cleanOppToCORorQuote:
-    for o in oppsToValidate:
+    for o in opps_to_validate:
         opptyID = o['Id']
         opptyCapex = o['Total_Success_Based_Capex_Calc__c']
         opptyNetexMRC = o['Netex_MRC_Approved__c']
@@ -333,7 +332,7 @@ print(finalOppToTaskIdOutput)
 ## Everything is correct, NPV task can now be validated:
 # npvTasksToClose = []
 # for f in finalOppToTaskIdOutput:
-#     for n in npvTasksToValidate:
+#     for n in npv_tasks_to_validate:
 #         taskId = n['Id']
 #         associatedOppId = n['WhatId']
 #         if f == associatedOppId and taskId not in npvTasksToClose:
