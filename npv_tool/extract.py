@@ -7,7 +7,7 @@ class Extractor:
         soql = "SELECT Id, Name, CloseDate, Opportunity_Type__c, Total_MRR_Calc__c, Bandwidth__c, Reporting_Business_Group__c, Opportunity_Workflow_Type__c, StageName, Tax_Fee_Pass_Through__c, Installation_NRR__c, Total_MAR__c, Total_MRR__c, Term_in_Months__c, NPV__c, Netex_MRC_Approved__c, Netex_NRC_Approved__c, Total_Success_Based_Capex_Calc__c, Amount, Account.Name from Opportunity where Reporting_Business_Group__c in ('Ethernet', 'CloudLink', 'WAN') and StageName = '4 - Closed' and NPV__c >= 0 and CloseDate >= 2021-01-01 and Opportunity_Type__c in ('New Service', 'Positive Re-Rate/Move/Change', 'Negative Re-Rate/Move/Change') and Account.Intercompany_Account__c = false LIMIT 100"
         return soql
 
-    def get_npv_task(self, stringers):
+    def get_npv_task_info(self, stringers):
         soql = "SELECT Id, Subject, WhatId, Additional_Task_Response_Notes__c, Status from Task where WhatId in (" + stringers + ") and Subject = 'NPV Validation' and Status in ('Not Started', 'In Progress')"
         return soql
 

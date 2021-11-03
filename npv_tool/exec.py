@@ -3,20 +3,16 @@ pp = pprint.PrettyPrinter(indent=2)
 import shutil
 import os
 import json
-import csv
-from datetime import date, datetime, timedelta
-import datetime as dt
-today = date.today()
 
 from extract import Extractor
 from transform import Transformer
+from load import Loader
 ## Modify boolean as needed, if testing directly from static JSON blobs or performing execution of SOQL queries:
 full_soql_query_mode = False
-
 ## SFDC API AUTH:
 # auth is a separate Python module as a placeholder to store SFDC creds. Ref required params as follows:
-# sf = Salesforce(username='username', password='password', security_token='token', client_id='Testing', \
-    # instance_url='https://zayo.my.salesforce.com', session_id='')
+    # sf = Salesforce(username='username', password='password', security_token='token', client_id='Testing', \
+        # instance_url='https://zayo.my.salesforce.com', session_id='')
 if full_soql_query_mode == True:
     from simple_salesforce import Salesforce, SalesforceLogin
     from auth import sf
@@ -28,7 +24,7 @@ if full_soql_query_mode == True:
     size = opp_output['totalSize']
     formatted_opp_ids = e.format_opp_ids(opp_output, size)
 
-    npv_task_query = e.get_npv_task(formatted_opp_ids)
+    npv_task_query = e.get_npv_task_info(formatted_opp_ids)
     npv_task_output = sf.query_all(npv_task_query)
 
     service_order_query = e.get_so_info(formatted_opp_ids)
@@ -71,10 +67,7 @@ if j_dump_read == True:
     with open(blob_master, 'r') as reader:
         envdata = json.load(reader)
 
-if full_soql_query_mode == True:
-    target_dict_list = final_dict_list
-else:
-    target_dict_list = envdata
+target_dict_list = final_dict_list if full_soql_query_mode else envdata
 
 opps = target_dict_list[0]['records']
 service_orders = target_dict_list[2]['records']
@@ -92,28 +85,13 @@ valid_opp_to_service_orders = t.validate_opp_to_service_order()
 valid_opp_to_quote_or_cor_form = t.validate_opp_to_quote_or_cor_form(valid_opp_to_service_orders)
 standardized_opp_to_cp_or_eb = t.standardize_opp_to_cp_or_eb(valid_opp_to_quote_or_cor_form)
 valid_opp_to_cp_or_eb = t.validate_opp_to_cp_or_eb(valid_opp_to_quote_or_cor_form, standardized_opp_to_cp_or_eb)
-
 print(valid_opp_to_cp_or_eb)
-## Everything is correct, NPV task can now be validated:
-# npvTasksToClose = []
-# for f in valid_opp_to_cp_or_eb:
-#     for n in npv_tasks:
-#         taskId = n['Id']
-#         associatedOppId = n['WhatId']
-#         if f == associatedOppId and taskId not in npvTasksToClose:
-#             npvTasksToClose.append(taskId)
-# for task in npvTasksToClose:
-#     test = sf.Task.update(
-#         task,
-#         {
-#             'Status': 'Completed',
-#             'OwnerId': '00560000001hYAUAA2',
-#             'Additional_Task_Response_Notes__c':
-#             'Completed via Automation'
-#             }
-#             )
-# if len(npvTasksToClose) == 0:
-#     print('0 NPV tasks validated by automation.')
-# elif len(npvTasksToClose) > 0:
-#     print('{} NPV tasks {} validated by automation. Please move to Stage 5 via the corresponding report queue: \n \
-#         https://zayo.my.salesforce.com/00O0z000005btK4'.format(len(npvTasksToClose), npvTasksToClose))
+
+## All validation stages passed, applicable NPV tasks can now be closed:
+l = Loader(valid_opp_to_cp_or_eb, npv_tasks)
+tasks_closed = l.load_tasks() if full_soql_query_mode else []
+if len(tasks_closed) == 0:
+    print('0 NPV tasks validated by automation.')
+elif len(tasks_closed) > 0:
+    print('{} NPV tasks validated by automation. Please move to Stage 5 via the corresponding report queue: \n \
+        https://zayo.my.salesforce.com/00O0z000005btK4'.format(len(tasks_closed)))
