@@ -136,13 +136,9 @@ class Transformer:
             ## If prior validation stages passed, and NOT 'Dirty' from both CP AND EB check:
             elif v in cp_opp_dict.keys() and v in eb_opp_dict.keys():
                 for p in cp_opp_dict:
-                    capex_ck = False
-                    if v == p and cp_opp_dict[p] == 'Clean':
-                        capex_ck = True
+                    capex_ck = True if v == p and cp_opp_dict[p] == 'Clean' else False
                     for e in eb_opp_dict:
-                        eb_check = False
-                        if v == e and eb_opp_dict[e] == 'Clean':
-                            eb_check = True
+                        eb_check = True if v == e and eb_opp_dict[e] == 'Clean' else False
                         if capex_ck and eb_check and v not in output_list:
                             output_list.append(v)
         return output_list

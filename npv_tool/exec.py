@@ -85,7 +85,7 @@ valid_opp_to_service_orders = t.validate_opp_to_service_order()
 valid_opp_to_quote_or_cor_form = t.validate_opp_to_quote_or_cor_form(valid_opp_to_service_orders)
 standardized_opp_to_cp_or_eb = t.standardize_opp_to_cp_or_eb(valid_opp_to_quote_or_cor_form)
 valid_opp_to_cp_or_eb = t.validate_opp_to_cp_or_eb(valid_opp_to_quote_or_cor_form, standardized_opp_to_cp_or_eb)
-print(valid_opp_to_cp_or_eb)
+# print(valid_opp_to_cp_or_eb)
 
 ## All validation stages passed, applicable NPV tasks can now be closed:
 l = Loader(valid_opp_to_cp_or_eb, npv_tasks)
