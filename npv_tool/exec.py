@@ -6,16 +6,16 @@ import json
 
 from extract import Extractor
 from transform import Transformer
-from load import Loader
 ## Modify boolean as needed, if testing directly from static JSON blobs or performing execution of SOQL queries:
 full_soql_query_mode = False
 ## SFDC API AUTH:
 # auth is a separate Python module as a placeholder to store SFDC creds. Ref required params as follows:
+    # from simple_salesforce import Salesforce, SalesforceLogin
     # sf = Salesforce(username='username', password='password', security_token='token', client_id='Testing', \
         # instance_url='https://zayo.my.salesforce.com', session_id='')
 if full_soql_query_mode == True:
-    from simple_salesforce import Salesforce, SalesforceLogin
     from auth import sf
+    from load import Loader
 
     e = Extractor()
     opp_query = e.get_opp_info()
@@ -88,7 +88,7 @@ valid_opp_to_cp_or_eb = t.validate_opp_to_cp_or_eb(valid_opp_to_quote_or_cor_for
 # print(valid_opp_to_cp_or_eb)
 
 ## All validation stages passed, applicable NPV tasks can now be closed:
-l = Loader(valid_opp_to_cp_or_eb, npv_tasks)
+l = Loader(valid_opp_to_cp_or_eb, npv_tasks) if full_soql_query_mode else None
 tasks_closed = l.load_tasks() if full_soql_query_mode else []
 if len(tasks_closed) == 0:
     print('0 NPV tasks validated by automation.')

@@ -1,3 +1,5 @@
+from auth import sf
+
 class Loader:
     def __init__(self, valid_opp_ids, npv_tasks):
         self.valid_opp_ids = valid_opp_ids
