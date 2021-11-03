@@ -86,8 +86,8 @@ class Transformer:
                     output_list.append(v)
         return output_list
 
-    ## This function checks Opp vs EB & CP values, as applicable. If this stage is passed, the associated NPV task can be closed:
-    def validate_opp_to_cp_or_eb(self, valid_opp_ids):
+    ## The next two functions check Opp vs EB & CP values, as applicable. If these stages are passed, the associated NPV task can be closed:
+    def standardize_opp_to_cp_or_eb(self, valid_opp_ids):
         cp_opp_dict = {}
         eb_opp_dict = {}
         for p in self.cap_projects:
@@ -123,32 +123,37 @@ class Transformer:
                                 eb_opp_dict[b] = 'Clean'
                             else:
                                 eb_opp_dict[b] = 'Dirty'
+        return [cp_opp_dict, eb_opp_dict]
+
+    def validate_opp_to_cp_or_eb(self, valid_opp_ids, helper_dicts):
         output_list = []
+        cp_opp_dict = helper_dicts[0]
+        eb_opp_dict = helper_dicts[1]
         for v in valid_opp_ids:
             ## If there is no CP or EB, assumed clean, because already validated in prior two stages.
-            # Remove this block if false positives are produced:
+                # Remove this conditional if false positives are produced:
             if v not in cp_opp_dict.keys() and v not in eb_opp_dict.keys() and v not in output_list:
                 output_list.append(v)
-            ## If prior two validation stages passed, and NOT 'Dirty' from CP check:
+            ## If prior validation stages passed, and NOT 'Dirty' from CP check:
             elif v in cp_opp_dict.keys() and v not in eb_opp_dict.keys():
                 for p in cp_opp_dict:
                     if v == p and cp_opp_dict[p] == 'Clean' and v not in output_list:
                         output_list.append(v)
-                ## If prior two validation stages passed, and NOT 'Dirty' from EB check:
+            ## If prior validation stages passed, and NOT 'Dirty' from EB check:
             elif v not in cp_opp_dict.keys() and v in eb_opp_dict.keys():
                 for e in eb_opp_dict:
                     if v == e and eb_opp_dict[e] == 'Clean' and v not in output_list:
                         output_list.append(v)
-                ## If prior two validation stages passed, and NOT 'Dirty' from both CP AND EB check:
+            ## If prior validation stages passed, and NOT 'Dirty' from both CP AND EB check:
             elif v in cp_opp_dict.keys() and v in eb_opp_dict.keys():
                 for p in cp_opp_dict:
-                    cap_ck = False
+                    capex_ck = False
                     if v == p and cp_opp_dict[p] == 'Clean':
-                        cap_ck = True
+                        capex_ck = True
                     for e in eb_opp_dict:
-                        eb_ck = False
+                        eb_check = False
                         if v == e and eb_opp_dict[e] == 'Clean':
-                            eb_ck = True
-                        if cap_ck and eb_ck and v not in output_list:
+                            eb_check = True
+                        if capex_ck and eb_check and v not in output_list:
                             output_list.append(v)
         return output_list
