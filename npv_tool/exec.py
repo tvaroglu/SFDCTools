@@ -76,32 +76,32 @@ if full_soql_query_mode == True:
 else:
     target_dict_list = envdata
 
-opps_to_validate = target_dict_list[0]['records']
-service_orders_to_validate = target_dict_list[2]['records']
-quotes_to_validate = target_dict_list[5]['records']
-cor_forms_to_validate = target_dict_list[6]['records']
-cap_projects_to_validate = target_dict_list[3]['records']
-expense_builders_to_validate = target_dict_list[4]['records']
-npv_tasks_to_validate = target_dict_list[1]['records']
+opps = target_dict_list[0]['records']
+service_orders = target_dict_list[2]['records']
+quotes = target_dict_list[5]['records']
+cor_forms = target_dict_list[6]['records']
+cap_projects = target_dict_list[3]['records']
+expense_builders = target_dict_list[4]['records']
+npv_tasks = target_dict_list[1]['records']
 
 print('All data successfully queried. Any errors after this point are due to DATA VALIDATION ONLY.')
 
 
-t = Transformer(opps_to_validate)
-valid_opp_to_service_orders = t.validate_opp_to_service_order(service_orders_to_validate)
+t = Transformer(opps, service_orders, quotes, cor_forms, cap_projects, expense_builders)
+valid_opp_to_service_orders = t.validate_opp_to_service_order()
 
-cleanOppToCORorQuote = t.validate_opp_to_quote_or_cor_form(valid_opp_to_service_orders, quotes_to_validate, cor_forms_to_validate)
+cleanOppToCORorQuote = t.validate_opp_to_quote_or_cor_form(valid_opp_to_service_orders)
 
 ## This final block checks Opp vs EB & CP values, as applicable. If this stage is passed, the associated NPV task can be closed.
 cleanOpptoCPandEB = []
 cpOppShell = {}
 ebOppShell = {}
-for p in cap_projects_to_validate:
+for p in cap_projects:
     cpOppShell[p['Opportunity__c']] = p['ICB_Approved_Amount__c']
 for clean in cleanOppToCORorQuote:
     totalNetxMRC = 0
     totalNetxNRC = 0
-    for e in expense_builders_to_validate:
+    for e in expense_builders:
         Id = e['Id']
         oppID = e['Opportunity__c']
         netXMRC = e['Netex_MRC__c']
@@ -115,7 +115,7 @@ for clean in cleanOppToCORorQuote:
 # pp.pprint(cpOppShell)
 # pp.pprint(ebOppShell)
 for cleaned in cleanOppToCORorQuote:
-    for o in opps_to_validate:
+    for o in opps:
         opptyID = o['Id']
         opptyCapex = o['Total_Success_Based_Capex_Calc__c']
         opptyNetexMRC = o['Netex_MRC_Approved__c']
@@ -182,7 +182,7 @@ print(finalOppToTaskIdOutput)
 ## Everything is correct, NPV task can now be validated:
 # npvTasksToClose = []
 # for f in finalOppToTaskIdOutput:
-#     for n in npv_tasks_to_validate:
+#     for n in npv_tasks:
 #         taskId = n['Id']
 #         associatedOppId = n['WhatId']
 #         if f == associatedOppId and taskId not in npvTasksToClose:

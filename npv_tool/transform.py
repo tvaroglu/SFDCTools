@@ -1,13 +1,18 @@
 class Transformer:
-    def __init__(self, opps):
+    def __init__(self, opps, service_orders, quotes, cor_forms, cap_projects, expense_builders):
         self.opps = opps
+        self.service_orders = service_orders
+        self.quotes = quotes
+        self.cor_forms = cor_forms
+        self.cap_projects = cap_projects
+        self.expense_builders = expense_builders
         self.valid_term_lengths = [12.0, 24.0, 36.0, 60.0]
 
     ## This function checks Opp vs SO financial field values. If anything doesn't align between the two, the Opp is excluded from future validation stages:
-    def validate_opp_to_service_order(self, service_orders):
+    def validate_opp_to_service_order(self):
         output_list = []
         for o in self.opps:
-            for s in service_orders:
+            for s in self.service_orders:
                 if o['Id'] == s['Opportunity__c']:
                     amount_ck = o['Amount'] == (s['MRR__c'] - s['Tax_Fee_Pass_Through__c'])
                     tax_ck = o['Tax_Fee_Pass_Through__c'] == s['Tax_Fee_Pass_Through__c']
@@ -21,12 +26,12 @@ class Transformer:
         return output_list
 
     ## This function checks Opp vs Quote or COR form, based on Workflow Type. If anything doesn't align between the two, the Opp is excluded from future validation stages:
-    def validate_opp_to_quote_or_cor_form(self, valid_opp_ids, quotes, cor_forms):
+    def validate_opp_to_quote_or_cor_form(self, valid_opp_ids):
         output_list = []
         for v in valid_opp_ids:
             for o in self.opps:
                 if v == o['Id'] and o['Opportunity_Workflow_Type__c'] in ['Standard Pricing', 'Tranzact Custom Solution', 'ASR (Automated)']:
-                    for q in quotes:
+                    for q in self.quotes:
                         if o['Id'] == q['Opportunity__c'] and q['CPQ_Status__c'] in ['Ordered', 'Order Pending']:
                             capex_ck = o['Total_Success_Based_Capex_Calc__c'] == q['Total_Capex__c']
                             if o['Term_in_Months__c'] == 12.0:
@@ -54,7 +59,7 @@ class Transformer:
                             if capex_ck and cust_mrc_ck and cust_nrc_ck and netex_mrc_ck and netex_nrc_ck and v not in output_list:
                                 output_list.append(v)
                 elif v == o['Id'] and o['Opportunity_Workflow_Type__c'] == 'Custom Solution':
-                    for c in cor_forms:
+                    for c in self.cor_forms:
                         if o['Id'] == c['Special_Pricing_ICB__r']['Opportunity_Lookup__c']:
                             capex_ck = o['Total_Success_Based_Capex_Calc__c'] == c['Total_Success_Based_Capital__c']
                             if o['Term_in_Months__c'] == 12.0:
