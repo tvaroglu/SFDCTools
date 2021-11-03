@@ -85,3 +85,70 @@ class Transformer:
                 elif v == o['Id'] and o['Opportunity_Workflow_Type__c'] == 'Administrative' and v not in output_list:
                     output_list.append(v)
         return output_list
+
+    ## This function checks Opp vs EB & CP values, as applicable. If this stage is passed, the associated NPV task can be closed:
+    def validate_opp_to_cp_or_eb(self, valid_opp_ids):
+        cp_opp_dict = {}
+        eb_opp_dict = {}
+        for p in self.cap_projects:
+            cp_opp_dict[p['Opportunity__c']] = p['ICB_Approved_Amount__c']
+        for v in valid_opp_ids:
+            total_netex_mrc = 0
+            total_netex_nrc = 0
+            for e in self.expense_builders:
+                if v == e['Opportunity__c']:
+                    total_netex_mrc += e['Netex_MRC__c']
+                    total_netex_nrc += e['Netex_NRC__c']
+                    eb_opp_dict[v] = [total_netex_mrc, total_netex_nrc]
+        for v in valid_opp_ids:
+            for o in self.opps:
+                if v == o['Id']:
+                    for p in cp_opp_dict:
+                        related_opp = p
+                        capex = cp_opp_dict[p]
+                        if o['Id'] == related_opp:
+                            capex_ck = o['Total_Success_Based_Capex_Calc__c'] == capex
+                            if capex_ck:
+                                cp_opp_dict[p] = 'Clean'
+                            else:
+                                cp_opp_dict[p] = 'Dirty'
+                    for b in eb_opp_dict:
+                        related_opp = b
+                        total_netex_mrc = eb_opp_dict[b][0]
+                        total_netex_nrc = eb_opp_dict[b][1]
+                        if o['Id'] == related_opp:
+                            mrc_check = o['Netex_MRC_Approved__c'] == total_netex_mrc
+                            nrc_check = o['Netex_NRC_Approved__c'] == total_netex_nrc
+                            if mrc_check and nrc_check:
+                                eb_opp_dict[b] = 'Clean'
+                            else:
+                                eb_opp_dict[b] = 'Dirty'
+        output_list = []
+        for v in valid_opp_ids:
+            ## If there is no CP or EB, assumed clean, because already validated in prior two stages.
+            # Remove this block if false positives are produced:
+            if v not in cp_opp_dict.keys() and v not in eb_opp_dict.keys() and v not in output_list:
+                output_list.append(v)
+            ## If prior two validation stages passed, and NOT 'Dirty' from CP check:
+            elif v in cp_opp_dict.keys() and v not in eb_opp_dict.keys():
+                for p in cp_opp_dict:
+                    if v == p and cp_opp_dict[p] == 'Clean' and v not in output_list:
+                        output_list.append(v)
+                ## If prior two validation stages passed, and NOT 'Dirty' from EB check:
+            elif v not in cp_opp_dict.keys() and v in eb_opp_dict.keys():
+                for e in eb_opp_dict:
+                    if v == e and eb_opp_dict[e] == 'Clean' and v not in output_list:
+                        output_list.append(v)
+                ## If prior two validation stages passed, and NOT 'Dirty' from both CP AND EB check:
+            elif v in cp_opp_dict.keys() and v in eb_opp_dict.keys():
+                for p in cp_opp_dict:
+                    cap_ck = False
+                    if v == p and cp_opp_dict[p] == 'Clean':
+                        cap_ck = True
+                    for e in eb_opp_dict:
+                        eb_ck = False
+                        if v == e and eb_opp_dict[e] == 'Clean':
+                            eb_ck = True
+                        if cap_ck and eb_ck and v not in output_list:
+                            output_list.append(v)
+        return output_list
