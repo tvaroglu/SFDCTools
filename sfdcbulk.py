@@ -70,7 +70,7 @@ field_list = 'Id'
 field_query = field_list.strip("'")
 soql_data = sf.query_all("SELECT {} from {} Where LastModifiedById = '{}' and SystemModStamp = TODAY".format(field_query, sf_object, user_id))
 df = pd.DataFrame(soql_data['records']).drop(columns='attributes')
-# print(df)
+
 if len(df) == len(disbursals):
     print('{} SUCCESSFUL in SFDC for {} total {} records, your data was clean.'.format(job_type, len(disbursals), sf_object))
 else:
