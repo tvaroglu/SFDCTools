@@ -90,8 +90,8 @@ class Transformer:
     def standardize_opp_to_cp_or_eb(self, valid_opp_ids):
         cp_opp_dict = {}
         eb_opp_dict = {}
-        for p in self.cap_projects:
-            cp_opp_dict[p['Opportunity__c']] = p['ICB_Approved_Amount__c']
+        for c in self.cap_projects:
+            cp_opp_dict[c['Opportunity__c']] = c['ICB_Approved_Amount__c']
         for v in valid_opp_ids:
             total_netex_mrc = 0
             total_netex_nrc = 0
@@ -104,25 +104,14 @@ class Transformer:
             for o in self.opps:
                 if v == o['Id']:
                     for p in cp_opp_dict:
-                        related_opp = p
-                        capex = cp_opp_dict[p]
-                        if o['Id'] == related_opp:
-                            capex_ck = o['Total_Success_Based_Capex_Calc__c'] == capex
-                            if capex_ck:
-                                cp_opp_dict[p] = 'Clean'
-                            else:
-                                cp_opp_dict[p] = 'Dirty'
+                        if p == o['Id']:
+                            capex_ck = o['Total_Success_Based_Capex_Calc__c'] == cp_opp_dict[p]
+                            cp_opp_dict[p] = 'Clean' if capex_ck else 'Dirty'
                     for b in eb_opp_dict:
-                        related_opp = b
-                        total_netex_mrc = eb_opp_dict[b][0]
-                        total_netex_nrc = eb_opp_dict[b][1]
-                        if o['Id'] == related_opp:
-                            mrc_check = o['Netex_MRC_Approved__c'] == total_netex_mrc
-                            nrc_check = o['Netex_NRC_Approved__c'] == total_netex_nrc
-                            if mrc_check and nrc_check:
-                                eb_opp_dict[b] = 'Clean'
-                            else:
-                                eb_opp_dict[b] = 'Dirty'
+                        if b == o['Id']:
+                            mrc_check = o['Netex_MRC_Approved__c'] == eb_opp_dict[b][0]
+                            nrc_check = o['Netex_NRC_Approved__c'] == eb_opp_dict[b][1]
+                            eb_opp_dict[b] = 'Clean' if mrc_check and nrc_check else 'Dirty'
         return [cp_opp_dict, eb_opp_dict]
 
     def validate_opp_to_cp_or_eb(self, valid_opp_ids, helper_dicts):
