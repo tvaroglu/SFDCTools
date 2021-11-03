@@ -4,10 +4,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Form Submit - Placeholder</title>
+<title>Front End UI - Placeholder</title>
 
 <style>
-
 body {
     background-color: rgba(250,250,250,0.55);
     position: absolute;
@@ -23,8 +22,6 @@ body {
     padding: 0px;
     width: 33%;
 }
-
-
 </style>
 </head>
 
@@ -34,17 +31,20 @@ body {
         <h1 style="color:orangered;">Zayo NPV Validation Automation Tool</h1>
         <form action="" method="post">
             <fieldset>
-                <legend>Data Import:</legend>
-                    Import .CSV file:<br>
-                    <input type="text" name="Import .CSV file:" style="float:left;">
-                    <button style="float:left;margin-left:10px;">Browse</button>
-                    <br>
-                    
+                <legend>Salesforce Login Credentials:</legend>
+                    SFDC Username:<br>
+                    <input type="text" name="SFDC Username:"><br>
+
+                    Password:<br>
+                    <input type="text" name="Password:"><br>
+
+                    Security Token:<br>
+                    <input type="text" name="Security Token:"><br>
 
                     <br>
 
-                    <input type="submit" value="Validate NPV Tasks">
-                </fieldset>
+                    <input type="submit" value="Log in">
+            </fieldset>
         </form>
     </div>
 

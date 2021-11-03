@@ -1,13 +1,12 @@
-import unittest
-import shutil
-import os
 import pprint
 pp = pprint.PrettyPrinter(indent=2)
+import shutil
+import os
 
 from datetime import date, datetime, timedelta
 today = date.today()
 import datetime as dt
-from FileFinder import retrieveWoWFile
+from file_finder import retrieve_wow_file
 
 import csv
 import xlrd, openpyxl
@@ -19,10 +18,9 @@ import pandas as pd
 import numpy as np
 
 
-
 ### SFDC API AUTH:
 from auth import sf
-## auth is a separate Python module as a placeholder to store SFDC creds. 
+## auth is a separate Python module as a placeholder to store SFDC creds.
     # ref required params:
 ## sf = Salesforce(username=username, password=password, security_token=token, client_id='Testing', \
     #instance_url="https://zayo.my.salesforce.com", session_id='')
@@ -143,7 +141,7 @@ if comparison_file != 'N/A':
     date_comparison = forecast_category_comparison[return_quarter_comparison == target_quarter]
     sales_comparison = date_comparison[date_comparison.Total_MRR_Calc__c > 0.00]
     churn_comparison = date_comparison[date_comparison.Total_MRR_Calc__c < 0.00]
-    # Sales WoW Variance   
+    # Sales WoW Variance
     sc_pivot = pd.pivot_table(data = sales_comparison, values = 'Total_MRR_Calc__c', aggfunc = [np.sum, np.size], \
         index = pivot_index)
     sales_variance = sales_pivot.subtract(sc_pivot, axis = 0)
@@ -159,7 +157,7 @@ else:
     writer.save()
 
 
-## Note, user will face permission issues if trying to write files directly to Drive file stream via .bat file for task scheduling.. 
+## Note, user will face permission issues if trying to write files directly to Drive file stream via .bat file for task scheduling..
     #below block moves final file from local path to the shared Drive folder:
 try:
     shutil.move(daily_export, destination)

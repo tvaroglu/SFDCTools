@@ -1,24 +1,20 @@
-import sys
-import os
-
 import pprint
 pp = pprint.PrettyPrinter(indent=2)
+import sys
+import os
 
 from datetime import date, datetime, timedelta
 today = date.today()
 import datetime as dt
 
-
-
-## From DataArchive module
+## From data_archive module:
 date_range = 'THIS_YEAR'
 # Directory info for file retrieval:
 file_name = '{}_FunnelSnapshot__{}.xlsx'.format(date_range, today)
-#destination = 'C:/Users/tvaroglu/Desktop/Product Dev/Coding/Testing/DataArchive/DateRanges'
 destination = 'K:/Shared drives/WAN-Eth_FunnelDataArchive'
 
 
-def retrieveWoWFile (path):
+def retrieve_wow_file(path):
     #global target_file
     path = destination
     # WoW comparison:
@@ -156,5 +152,3 @@ def retrieveWoWFile (path):
         target_file = '{}_FunnelSnapshot__{}.xlsx'.format(date_range, target_date)
     to_retrieve = path + '/' + target_file
     return to_retrieve
-
-#print(retrieveWoWFile(destination))

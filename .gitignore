@@ -1,10 +1,8 @@
 # Folders
-/__pycache__
-/SFDCqueries/UnitTestingTutorial/my_sum/__pycache__
-/SFDCqueries/__pycache__
-/DataArchive/__pycache__
+**/__pycache__/
 /my-local-aws-repo
 /env
+/venv
 /BulkLoadFiles
 /.vscode
 
