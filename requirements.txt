@@ -12,14 +12,14 @@ jdcal==1.4.1
 joblib==0.14.1
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.3
-lxml==4.6.3
+lxml==4.7.1
 matplotlib==3.2.0
 mccabe==0.6.1
 numpy==1.22.0
 openpyxl==3.0.7
 pandas==1.2.3
 pep8==1.7.1
-Pillow==8.3.1
+Pillow==9.0.0
 pycodestyle==2.5.0
 pycparser==2.19
 pylint==2.4.4
