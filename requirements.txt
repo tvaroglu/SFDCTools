@@ -19,7 +19,7 @@ numpy==1.22.0
 openpyxl==3.0.7
 pandas==1.2.3
 pep8==1.7.1
-Pillow==9.0.0
+Pillow==9.0.1
 pycodestyle==2.5.0
 pycparser==2.19
 pylint==2.4.4
